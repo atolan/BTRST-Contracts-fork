@@ -41,12 +41,7 @@ contract GovernanceDecisions is AccessControl {
         return marketplaceCategories;
     }
 
-    function addFoundationMember(string calldata member) external {
-        require(hasRole(GOVERNOR_ROLE, msg.sender), "GovernanceDecisions::addFoundationMember ACCESS FORBIDDEN");
-
-        foundationMemberships.push(member);
-        emit FoundationMemberAdded(member);
-    }
+    
 
     function getMemberships() public view returns (string[] memory) {
         return foundationMemberships;
